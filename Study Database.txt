@@ -1,0 +1,108 @@
+drop database study;
+create database study;
+use study;
+drop table student;
+create table student(
+sname varchar(255),
+sid varchar(255) primary key,
+dept varchar(15),
+email varchar(255),
+dob varchar(255),
+uname varchar(255) unique,
+pass varchar(255),
+pic longblob,
+pname varchar(255)
+);
+
+drop table Instructor;
+create table Instructor(
+iname varchar(255),
+dept varchar(15),
+email varchar(255),
+dob varchar(255),
+uname varchar(255) primary key,
+pass varchar(255)
+);
+
+drop table sub;
+create table sub(
+iname varchar(100),
+sub varchar(255) primary key
+);
+
+drop table meterial;
+create table meterial(
+iname varchar(255),
+sub varchar(255),
+met varchar(255)
+);
+
+drop table notice;
+create table notice(
+iname varchar(255),
+sub varchar(255),
+note varchar(255),
+datee varchar(255)
+);
+s
+drop table quiz;
+create table quiz(
+qid int(255) NOT NULL AUTO_INCREMENT,
+iname varchar(255),
+sub varchar(255),
+qname varchar(255),
+qtype varchar(255),
+que int(255),
+primary key(qid)
+);
+
+drop table questions;
+create table questions
+(
+qid2 int(255) NOT NULL AUTO_INCREMENT,
+qid int(255),
+qnum int(255),
+question varchar(255),
+opt1 varchar(255),
+opt2 varchar(255),
+opt3 varchar(255),
+opt4 varchar(255),
+ans varchar(255),
+file varchar(255),
+pic longblob,
+primary key(qid2)
+);
+
+drop table exam;
+create table exam(
+eid int(255) NOT NULL AUTO_INCREMENT,
+eid2 int(255),
+sid varchar(255),
+qid2 int(255),
+qid int(255),
+qnum int(255),
+question varchar(255),
+ans varchar(255),
+opt varchar(255),
+primary key(eid)
+);
+drop table discuss;
+create table discuss
+(
+did int(255) NOT NULL AUTO_INCREMENT,
+sid varchar(255),
+dname varchar(255),
+primary key(did)
+);
+
+drop table comment;
+create table comment 
+(
+cid int(255) NOT NULL AUTO_INCREMENT,
+did int(255),
+sid varchar(255),
+dname varchar(255),
+com varchar(255),
+cby varchar(255),
+primary key(cid)
+);
